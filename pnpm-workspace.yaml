@@ -11,6 +11,14 @@ allowBuilds:
   workerd: true
   sharp: true
 
+overrides:
+  # miniflare 4 pins vulnerable versions; override to patched releases
+  # (sharp libheif/librsvg CVEs, undici cache/websocket CVEs)
+  sharp: 0.35.5
+  undici: 7.29.1
+  # drizzle-kit's stale @esbuild-kit chain pins esbuild ~0.18.20
+  '@esbuild-kit/core-utils>esbuild': 0.25.12
+
 minimumReleaseAgeExclude:
   - '@cloudflare/workerd-darwin-64@1.20260616.1'
   - '@cloudflare/workerd-darwin-arm64@1.20260616.1'
